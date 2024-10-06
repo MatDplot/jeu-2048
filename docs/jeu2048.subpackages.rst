@@ -1,0 +1,14 @@
+jeu2048.subpackages package
+===========================
+
+.. automodule:: jeu2048.subpackages
+
+jeu2048.subpackages.grid_setup module
+-------------------------------------
+
+.. automodule:: jeu2048.subpackages.grid_setup
+
+jeu2048.subpackages.move_grid module
+------------------------------------
+
+.. automodule:: jeu2048.subpackages.move_grid

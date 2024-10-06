@@ -1,0 +1,18 @@
+Installation notes:
+
+* to install in developer mode::
+
+    $ python3 -m pip install -e .
+    
+  or::
+  
+    $ python3 setup.py install  
+
+
+* you can run the main part of the modules using python option `-m`, e.g.::
+
+    $ python3 -m jeu2048
+
+  or::
+
+    $ jeu2048

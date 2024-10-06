@@ -1,0 +1,17 @@
+jeu2048 package
+===============
+
+.. automodule:: jeu2048
+
+jeu2048.game module
+-------------------
+
+.. automodule:: jeu2048.game
+
+Subpackages
+-----------
+
+.. toctree::
+
+   jeu2048.subpackages
+
