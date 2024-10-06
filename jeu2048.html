@@ -1,0 +1,242 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>jeu2048 package &#8212; jeu2048 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=83e35b93" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=c92c1228" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=359c27e9"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="jeu2048.subpackages package" href="jeu2048.subpackages.html" />
+    <link rel="prev" title="Documentation" href="documentation.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="jeu2048.subpackages.html" title="jeu2048.subpackages package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="documentation.html" title="Documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">jeu2048 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">jeu2048 package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-jeu2048">
+<span id="jeu2048-package"></span><h1>jeu2048 package<a class="headerlink" href="#module-jeu2048" title="Permalink to this heading">¶</a></h1>
+<p>Module permettant de jouer au 2048</p>
+<section id="module-jeu2048.game">
+<span id="jeu2048-game-module"></span><h2>jeu2048.game module<a class="headerlink" href="#module-jeu2048.game" title="Permalink to this heading">¶</a></h2>
+<p>Création de la classe D2048 qui générèe une partie du jeu 2048</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="jeu2048.game.D2048">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jeu2048.game.</span></span><span class="sig-name descname"><span class="pre">D2048</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taille</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/jeu2048/game.html#D2048"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jeu2048.game.D2048" title="Permalink to this definition">¶</a></dt>
+<dd><p>Classe générant le jeu 2048 sur une grille de taille donnée</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jeu2048.game.D2048.demande_mvmt">
+<span class="sig-name descname"><span class="pre">demande_mvmt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">texte</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/jeu2048/game.html#D2048.demande_mvmt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jeu2048.game.D2048.demande_mvmt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Demande du mouvement à effectuer par le joueur selon les possibilités</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>texte</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a>) – Liste contenant les coups possibles</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Mouvement choisie par le joueur</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jeu2048.game.D2048.prevision">
+<span class="sig-name descname"><span class="pre">prevision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/jeu2048/game.html#D2048.prevision"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jeu2048.game.D2048.prevision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prévision des coups possibles que le joueur peut effectuer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>grid</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a>) – Matrice 2D</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Mouvements possibles sinon ‘perdu’</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list ou str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jeu2048.game.D2048.endgame">
+<span class="sig-name descname"><span class="pre">endgame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/jeu2048/game.html#D2048.endgame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jeu2048.game.D2048.endgame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vérification de la condition de victoire</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>grid</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a>) – Matrice 2D</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Victoire sinon string vide</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jeu2048.game.D2048.jouer">
+<span class="sig-name descname"><span class="pre">jouer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/jeu2048/game.html#D2048.jouer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jeu2048.game.D2048.jouer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Déroulement d’une partie</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="jeu2048.subpackages.html">jeu2048.subpackages package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jeu2048.subpackages.html#module-jeu2048.subpackages.grid_setup">jeu2048.subpackages.grid_setup module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.Couleurs"><code class="docutils literal notranslate"><span class="pre">Couleurs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.Couleurs.purple"><code class="docutils literal notranslate"><span class="pre">Couleurs.purple</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.Couleurs.blue"><code class="docutils literal notranslate"><span class="pre">Couleurs.blue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.Couleurs.cyan"><code class="docutils literal notranslate"><span class="pre">Couleurs.cyan</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.Couleurs.green"><code class="docutils literal notranslate"><span class="pre">Couleurs.green</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.Couleurs.yellow"><code class="docutils literal notranslate"><span class="pre">Couleurs.yellow</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.Couleurs.red"><code class="docutils literal notranslate"><span class="pre">Couleurs.red</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.Couleurs.white"><code class="docutils literal notranslate"><span class="pre">Couleurs.white</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.Couleurs.bold"><code class="docutils literal notranslate"><span class="pre">Couleurs.bold</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.init_grid"><code class="docutils literal notranslate"><span class="pre">init_grid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.max_grid"><code class="docutils literal notranslate"><span class="pre">max_grid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.taille_str_nombre"><code class="docutils literal notranslate"><span class="pre">taille_str_nombre()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.color"><code class="docutils literal notranslate"><span class="pre">color()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.show_grid"><code class="docutils literal notranslate"><span class="pre">show_grid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.random_grid"><code class="docutils literal notranslate"><span class="pre">random_grid()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jeu2048.subpackages.html#module-jeu2048.subpackages.move_grid">jeu2048.subpackages.move_grid module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.move_grid.move_ligne"><code class="docutils literal notranslate"><span class="pre">move_ligne()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.move_grid.colonne"><code class="docutils literal notranslate"><span class="pre">colonne()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jeu2048.subpackages.html#jeu2048.subpackages.move_grid.move_grid"><code class="docutils literal notranslate"><span class="pre">move_grid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">jeu2048 package</a><ul>
+<li><a class="reference internal" href="#module-jeu2048.game">jeu2048.game module</a><ul>
+<li><a class="reference internal" href="#jeu2048.game.D2048"><code class="docutils literal notranslate"><span class="pre">D2048</span></code></a><ul>
+<li><a class="reference internal" href="#jeu2048.game.D2048.demande_mvmt"><code class="docutils literal notranslate"><span class="pre">D2048.demande_mvmt()</span></code></a></li>
+<li><a class="reference internal" href="#jeu2048.game.D2048.prevision"><code class="docutils literal notranslate"><span class="pre">D2048.prevision()</span></code></a></li>
+<li><a class="reference internal" href="#jeu2048.game.D2048.endgame"><code class="docutils literal notranslate"><span class="pre">D2048.endgame()</span></code></a></li>
+<li><a class="reference internal" href="#jeu2048.game.D2048.jouer"><code class="docutils literal notranslate"><span class="pre">D2048.jouer()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="documentation.html"
+                          title="previous chapter">Documentation</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="jeu2048.subpackages.html"
+                          title="next chapter">jeu2048.subpackages package</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/jeu2048.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="jeu2048.subpackages.html" title="jeu2048.subpackages package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="documentation.html" title="Documentation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">jeu2048 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">jeu2048 package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2022, Mathis Dubau.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    </div>
+  </body>
+</html>

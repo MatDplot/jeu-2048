@@ -1,0 +1,375 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>jeu2048.subpackages package &#8212; jeu2048 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=83e35b93" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=c92c1228" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=359c27e9"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="main" href="main.html" />
+    <link rel="prev" title="jeu2048 package" href="jeu2048.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="main.html" title="main"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="jeu2048.html" title="jeu2048 package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">jeu2048 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="jeu2048.html" accesskey="U">jeu2048 package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">jeu2048.subpackages package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-jeu2048.subpackages">
+<span id="jeu2048-subpackages-package"></span><h1>jeu2048.subpackages package<a class="headerlink" href="#module-jeu2048.subpackages" title="Permalink to this heading">¶</a></h1>
+<p>Fonction pour paramétrer la grille de jeu ainsi
+que de permettre le deplacement des nombres de la grille</p>
+<section id="module-jeu2048.subpackages.grid_setup">
+<span id="jeu2048-subpackages-grid-setup-module"></span><h2>jeu2048.subpackages.grid_setup module<a class="headerlink" href="#module-jeu2048.subpackages.grid_setup" title="Permalink to this heading">¶</a></h2>
+<p>Module permettant de paramétrer et d’afficher la grille de jeu</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="jeu2048.subpackages.grid_setup.Couleurs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jeu2048.subpackages.grid_setup.</span></span><span class="sig-name descname"><span class="pre">Couleurs</span></span><a class="reference internal" href="_modules/jeu2048/subpackages/grid_setup.html#Couleurs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jeu2048.subpackages.grid_setup.Couleurs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Définition des couleurs du terminal</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jeu2048.subpackages.grid_setup.Couleurs.purple">
+<span class="sig-name descname"><span class="pre">purple</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[95m'</span></em><a class="headerlink" href="#jeu2048.subpackages.grid_setup.Couleurs.purple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jeu2048.subpackages.grid_setup.Couleurs.blue">
+<span class="sig-name descname"><span class="pre">blue</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[94m'</span></em><a class="headerlink" href="#jeu2048.subpackages.grid_setup.Couleurs.blue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jeu2048.subpackages.grid_setup.Couleurs.cyan">
+<span class="sig-name descname"><span class="pre">cyan</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[96m'</span></em><a class="headerlink" href="#jeu2048.subpackages.grid_setup.Couleurs.cyan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jeu2048.subpackages.grid_setup.Couleurs.green">
+<span class="sig-name descname"><span class="pre">green</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[92m'</span></em><a class="headerlink" href="#jeu2048.subpackages.grid_setup.Couleurs.green" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jeu2048.subpackages.grid_setup.Couleurs.yellow">
+<span class="sig-name descname"><span class="pre">yellow</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[93m'</span></em><a class="headerlink" href="#jeu2048.subpackages.grid_setup.Couleurs.yellow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jeu2048.subpackages.grid_setup.Couleurs.red">
+<span class="sig-name descname"><span class="pre">red</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[91m'</span></em><a class="headerlink" href="#jeu2048.subpackages.grid_setup.Couleurs.red" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jeu2048.subpackages.grid_setup.Couleurs.white">
+<span class="sig-name descname"><span class="pre">white</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[0m'</span></em><a class="headerlink" href="#jeu2048.subpackages.grid_setup.Couleurs.white" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jeu2048.subpackages.grid_setup.Couleurs.bold">
+<span class="sig-name descname"><span class="pre">bold</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[1m'</span></em><a class="headerlink" href="#jeu2048.subpackages.grid_setup.Couleurs.bold" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jeu2048.subpackages.grid_setup.init_grid">
+<span class="sig-prename descclassname"><span class="pre">jeu2048.subpackages.grid_setup.</span></span><span class="sig-name descname"><span class="pre">init_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taille</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/jeu2048/subpackages/grid_setup.html#init_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jeu2048.subpackages.grid_setup.init_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Création d’un plateau vide</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>taille</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – Taille du plateau</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Matrice 2D</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jeu2048.subpackages.grid_setup.max_grid">
+<span class="sig-prename descclassname"><span class="pre">jeu2048.subpackages.grid_setup.</span></span><span class="sig-name descname"><span class="pre">max_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/jeu2048/subpackages/grid_setup.html#max_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jeu2048.subpackages.grid_setup.max_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cherche le nombre de digits dans le plus grand nombre du plateau</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>grid</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a>) – Matrice 2D</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Nombre de digits du maximum de la matrice</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jeu2048.subpackages.grid_setup.taille_str_nombre">
+<span class="sig-prename descclassname"><span class="pre">jeu2048.subpackages.grid_setup.</span></span><span class="sig-name descname"><span class="pre">taille_str_nombre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">space_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/jeu2048/subpackages/grid_setup.html#taille_str_nombre"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jeu2048.subpackages.grid_setup.taille_str_nombre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifie la taille (au sens taille du string) d’un nombre
+pour qu’elle convienne à une autre</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>space_number</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – Taile final du string</p></li>
+<li><p><strong>i</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – Nombre à rallonger</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Le même nombre qui correspond à la taille donnée</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jeu2048.subpackages.grid_setup.color">
+<span class="sig-prename descclassname"><span class="pre">jeu2048.subpackages.grid_setup.</span></span><span class="sig-name descname"><span class="pre">color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/jeu2048/subpackages/grid_setup.html#color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jeu2048.subpackages.grid_setup.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Définit les couleurs à afficher pour les différents nombres possibles
+Puissances de 2 jusqu’à 2048</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>i</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – Nombre</p></li>
+<li><p><strong>space_number</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – Taille du string</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>String avec les couleurs en fonction de la valeur de i et la taille aqéquates</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jeu2048.subpackages.grid_setup.show_grid">
+<span class="sig-prename descclassname"><span class="pre">jeu2048.subpackages.grid_setup.</span></span><span class="sig-name descname"><span class="pre">show_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/jeu2048/subpackages/grid_setup.html#show_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jeu2048.subpackages.grid_setup.show_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Affichage du plateau dans le terminal</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>grid</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a>) – Matrice 2D</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Affiachge du plateau dans le terminal</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jeu2048.subpackages.grid_setup.random_grid">
+<span class="sig-prename descclassname"><span class="pre">jeu2048.subpackages.grid_setup.</span></span><span class="sig-name descname"><span class="pre">random_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/jeu2048/subpackages/grid_setup.html#random_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jeu2048.subpackages.grid_setup.random_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Placmement d’un 2 à 80% et d’un 4 à 20% de chance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>grid</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a>) – Matrice 2D</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Plateau initial avec un 0 changé en 2 (80%) ou 4 (20%)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-jeu2048.subpackages.move_grid">
+<span id="jeu2048-subpackages-move-grid-module"></span><h2>jeu2048.subpackages.move_grid module<a class="headerlink" href="#module-jeu2048.subpackages.move_grid" title="Permalink to this heading">¶</a></h2>
+<p>Module permettant d’effectuer les mouvements du plateau</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="jeu2048.subpackages.move_grid.move_ligne">
+<span class="sig-prename descclassname"><span class="pre">jeu2048.subpackages.move_grid.</span></span><span class="sig-name descname"><span class="pre">move_ligne</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ligne</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/jeu2048/subpackages/move_grid.html#move_ligne"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jeu2048.subpackages.move_grid.move_ligne" title="Permalink to this definition">¶</a></dt>
+<dd><p>Déplacement d’un liste selon les règles du 2048</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ligne</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a>) – Ligne du plateau</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Ligne déplacée vers la gauche en sommant suivant les règles</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)">list</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jeu2048.subpackages.move_grid.colonne">
+<span class="sig-prename descclassname"><span class="pre">jeu2048.subpackages.move_grid.</span></span><span class="sig-name descname"><span class="pre">colonne</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/jeu2048/subpackages/move_grid.html#colonne"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jeu2048.subpackages.move_grid.colonne" title="Permalink to this definition">¶</a></dt>
+<dd><p>Conversion d’un colonne en une liste</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrix</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a>) – Matrice 2D</p></li>
+<li><p><strong>i</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – Indice de la colonne</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Liste des élèments de la ième colonne</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)">list</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jeu2048.subpackages.move_grid.move_grid">
+<span class="sig-prename descclassname"><span class="pre">jeu2048.subpackages.move_grid.</span></span><span class="sig-name descname"><span class="pre">move_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mvmt</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/jeu2048/subpackages/move_grid.html#move_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jeu2048.subpackages.move_grid.move_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Déplacement du plateau dans la direction choisie</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grid</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a>) – Matrice 2D</p></li>
+<li><p><strong>mvmt</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – Mouvement à effecteur</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Plateau déplacé selon la direction choisie</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">jeu2048.subpackages package</a><ul>
+<li><a class="reference internal" href="#module-jeu2048.subpackages.grid_setup">jeu2048.subpackages.grid_setup module</a><ul>
+<li><a class="reference internal" href="#jeu2048.subpackages.grid_setup.Couleurs"><code class="docutils literal notranslate"><span class="pre">Couleurs</span></code></a><ul>
+<li><a class="reference internal" href="#jeu2048.subpackages.grid_setup.Couleurs.purple"><code class="docutils literal notranslate"><span class="pre">Couleurs.purple</span></code></a></li>
+<li><a class="reference internal" href="#jeu2048.subpackages.grid_setup.Couleurs.blue"><code class="docutils literal notranslate"><span class="pre">Couleurs.blue</span></code></a></li>
+<li><a class="reference internal" href="#jeu2048.subpackages.grid_setup.Couleurs.cyan"><code class="docutils literal notranslate"><span class="pre">Couleurs.cyan</span></code></a></li>
+<li><a class="reference internal" href="#jeu2048.subpackages.grid_setup.Couleurs.green"><code class="docutils literal notranslate"><span class="pre">Couleurs.green</span></code></a></li>
+<li><a class="reference internal" href="#jeu2048.subpackages.grid_setup.Couleurs.yellow"><code class="docutils literal notranslate"><span class="pre">Couleurs.yellow</span></code></a></li>
+<li><a class="reference internal" href="#jeu2048.subpackages.grid_setup.Couleurs.red"><code class="docutils literal notranslate"><span class="pre">Couleurs.red</span></code></a></li>
+<li><a class="reference internal" href="#jeu2048.subpackages.grid_setup.Couleurs.white"><code class="docutils literal notranslate"><span class="pre">Couleurs.white</span></code></a></li>
+<li><a class="reference internal" href="#jeu2048.subpackages.grid_setup.Couleurs.bold"><code class="docutils literal notranslate"><span class="pre">Couleurs.bold</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jeu2048.subpackages.grid_setup.init_grid"><code class="docutils literal notranslate"><span class="pre">init_grid()</span></code></a></li>
+<li><a class="reference internal" href="#jeu2048.subpackages.grid_setup.max_grid"><code class="docutils literal notranslate"><span class="pre">max_grid()</span></code></a></li>
+<li><a class="reference internal" href="#jeu2048.subpackages.grid_setup.taille_str_nombre"><code class="docutils literal notranslate"><span class="pre">taille_str_nombre()</span></code></a></li>
+<li><a class="reference internal" href="#jeu2048.subpackages.grid_setup.color"><code class="docutils literal notranslate"><span class="pre">color()</span></code></a></li>
+<li><a class="reference internal" href="#jeu2048.subpackages.grid_setup.show_grid"><code class="docutils literal notranslate"><span class="pre">show_grid()</span></code></a></li>
+<li><a class="reference internal" href="#jeu2048.subpackages.grid_setup.random_grid"><code class="docutils literal notranslate"><span class="pre">random_grid()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jeu2048.subpackages.move_grid">jeu2048.subpackages.move_grid module</a><ul>
+<li><a class="reference internal" href="#jeu2048.subpackages.move_grid.move_ligne"><code class="docutils literal notranslate"><span class="pre">move_ligne()</span></code></a></li>
+<li><a class="reference internal" href="#jeu2048.subpackages.move_grid.colonne"><code class="docutils literal notranslate"><span class="pre">colonne()</span></code></a></li>
+<li><a class="reference internal" href="#jeu2048.subpackages.move_grid.move_grid"><code class="docutils literal notranslate"><span class="pre">move_grid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="jeu2048.html"
+                          title="previous chapter">jeu2048 package</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="main.html"
+                          title="next chapter">main</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/jeu2048.subpackages.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="main.html" title="main"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="jeu2048.html" title="jeu2048 package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">jeu2048 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="jeu2048.html" >jeu2048 package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">jeu2048.subpackages package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2022, Mathis Dubau.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    </div>
+  </body>
+</html>

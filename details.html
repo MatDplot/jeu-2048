@@ -1,0 +1,163 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Packaging (setup.cfg) &#8212; jeu2048 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=83e35b93" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=c92c1228" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=359c27e9"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="__main__.py" href="__main__.html" />
+    <link rel="prev" title="main" href="main.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="__main__.html" title="__main__.py"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="main.html" title="main"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">jeu2048 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Packaging (<code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code>)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="packaging-setup-cfg">
+<h1>Packaging (<code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code>)<a class="headerlink" href="#packaging-setup-cfg" title="Permalink to this heading">¶</a></h1>
+<p>Le fichier <a class="reference internal" href="setup.html#setup-cfg"><span class="std std-ref">setup.cfg</span></a> permet d’installer et paramétrer facilement le package:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>pyyc
+</pre></div>
+</div>
+<p>ou lors du clonage du <a class="reference external" href="https://gitlab.in2p3.fr/mathis.dubau/jeu-2048">dépôt GitLab</a>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://gitlab.in2p3.fr/mathis.dubau/jeu-2048
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>pyyc
+<span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+</section>
+<section id="package-initialization-init-py">
+<h1>Package initialization (<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>)<a class="headerlink" href="#package-initialization-init-py" title="Permalink to this heading">¶</a></h1>
+<p>Le fichier <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> dans chaque dossier du package initialise les import de chaque module.</p>
+</section>
+<section id="main-entries-main-py">
+<h1>Main entries (<code class="docutils literal notranslate"><span class="pre">__main__.py</span></code>)<a class="headerlink" href="#main-entries-main-py" title="Permalink to this heading">¶</a></h1>
+<p>Le progamme <em>main</em> peut être appelé de différentes façon:</p>
+<ul>
+<li><p>comme le <a class="reference internal" href="__main__.html#main-py"><span class="std std-ref">__main__.py</span></a> entry d’un module module</p>
+<p>Il ne peut y avoir qu’un package main, correspondant au <code class="docutils literal notranslate"><span class="pre">if</span>
+<span class="pre">__name</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;</span></code> du fichier <code class="docutils literal notranslate"><span class="pre">__main__.py</span></code>.</p>
+</li>
+<li><p>en tant que scripts défini comme point d’éntré dans <a class="reference internal" href="setup.html#setup-cfg"><span class="std std-ref">setup.cfg</span></a>:</p>
+<div class="highlight-cfg notranslate"><div class="highlight"><pre><span></span><span class="k">[options.entry_points]</span>
+<span class="na">console_scripts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">    </span><span class="na">jeu2048</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">jeu2048.__main__:main</span>
+<span class="w">    </span>
+</pre></div>
+</div>
+<p>Ces points d’entrés sont convertit en scripts:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>jeu2048<span class="w">      </span><span class="c1"># exécute jeu2048/__main__.py:main()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Packaging (<code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code>)</a></li>
+<li><a class="reference internal" href="#package-initialization-init-py">Package initialization (<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>)</a></li>
+<li><a class="reference internal" href="#main-entries-main-py">Main entries (<code class="docutils literal notranslate"><span class="pre">__main__.py</span></code>)</a></li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="main.html"
+                          title="previous chapter">main</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="__main__.html"
+                          title="next chapter"><code class="docutils literal notranslate"><span class="pre">__main__.py</span></code></a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/details.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="__main__.html" title="__main__.py"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="main.html" title="main"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">jeu2048 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Packaging (<code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code>)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2022, Mathis Dubau.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    </div>
+  </body>
+</html>

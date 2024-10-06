@@ -1,0 +1,162 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jeu2048.subpackages.move_grid &#8212; jeu2048 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=83e35b93" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/bizstyle.css?v=c92c1228" />
+    
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=359c27e9"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">jeu2048 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">jeu2048.subpackages.move_grid</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for jeu2048.subpackages.move_grid</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module permettant d&#39;effectuer les mouvements du plateau</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="move_ligne"><a class="viewcode-back" href="../../../jeu2048.subpackages.html#jeu2048.subpackages.move_grid.move_ligne">[docs]</a><span class="k">def</span> <span class="nf">move_ligne</span><span class="p">(</span><span class="n">ligne</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Déplacement d&#39;un liste selon les règles du 2048</span>
+
+<span class="sd">    :param list ligne: Ligne du plateau</span>
+<span class="sd">    :return: Ligne déplacée vers la gauche en sommant suivant les règles</span>
+<span class="sd">    :rtype: list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">lignep</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">lignepp</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ligne</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">lignep</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">dejavu</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">indx</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lignep</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">dejavu</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">dejavu</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">dejavu</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">lignep</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">lignep</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">==</span> <span class="n">lignep</span><span class="p">[</span><span class="n">indx</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="n">lignepp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lignep</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+                    <span class="n">dejavu</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">lignepp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lignep</span><span class="p">[</span><span class="n">indx</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">lignepp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lignep</span><span class="p">[</span><span class="n">indx</span><span class="p">])</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">lignepp</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">ligne</span><span class="p">):</span>
+        <span class="n">lignepp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">lignepp</span></div>
+
+<div class="viewcode-block" id="colonne"><a class="viewcode-back" href="../../../jeu2048.subpackages.html#jeu2048.subpackages.move_grid.colonne">[docs]</a><span class="k">def</span> <span class="nf">colonne</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Conversion d&#39;un colonne en une liste</span>
+
+<span class="sd">    :param list matrix: Matrice 2D</span>
+<span class="sd">    :param int i: Indice de la colonne</span>
+<span class="sd">    :return: Liste des élèments de la ième colonne</span>
+<span class="sd">    :rtype: list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">ligne</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">matrix</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="move_grid"><a class="viewcode-back" href="../../../jeu2048.subpackages.html#jeu2048.subpackages.move_grid.move_grid">[docs]</a><span class="k">def</span> <span class="nf">move_grid</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">mvmt</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Déplacement du plateau dans la direction choisie</span>
+
+<span class="sd">    :param list grid: Matrice 2D</span>
+<span class="sd">    :param str mvmt: Mouvement à effecteur</span>
+<span class="sd">    :return: Plateau déplacé selon la direction choisie</span>
+<span class="sd">    :rtype: list[list[int]]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">gridp</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">mvmt</span> <span class="o">==</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">:</span>
+            <span class="n">gridp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">move_ligne</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">i</span><span class="p">))))))</span>
+    <span class="k">if</span> <span class="n">mvmt</span> <span class="o">==</span> <span class="s1">&#39;q&#39;</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">:</span>
+            <span class="n">gridp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">move_ligne</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">mvmt</span> <span class="o">==</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span>
+        <span class="n">matrice</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+            <span class="n">matrice</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">move_ligne</span><span class="p">(</span><span class="n">colonne</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="n">i</span><span class="p">)))</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+            <span class="n">gridp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">colonne</span><span class="p">(</span><span class="n">matrice</span><span class="p">,</span><span class="n">i</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">mvmt</span> <span class="o">==</span> <span class="s1">&#39;s&#39;</span><span class="p">:</span>
+        <span class="n">matrice</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+            <span class="n">matrice</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">move_ligne</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">colonne</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="n">i</span><span class="p">)))))))</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+            <span class="n">gridp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">colonne</span><span class="p">(</span><span class="n">matrice</span><span class="p">,</span><span class="n">i</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">gridp</span></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">jeu2048 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">jeu2048.subpackages.move_grid</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2022, Mathis Dubau.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    </div>
+  </body>
+</html>

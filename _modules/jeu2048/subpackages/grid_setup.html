@@ -1,0 +1,225 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jeu2048.subpackages.grid_setup &#8212; jeu2048 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=83e35b93" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/bizstyle.css?v=c92c1228" />
+    
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=359c27e9"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">jeu2048 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">jeu2048.subpackages.grid_setup</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for jeu2048.subpackages.grid_setup</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module permettant de paramétrer et d&#39;afficher la grille de jeu</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<div class="viewcode-block" id="Couleurs"><a class="viewcode-back" href="../../../jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.Couleurs">[docs]</a><span class="k">class</span> <span class="nc">Couleurs</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Définition des couleurs du terminal</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">purple</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[95m&#39;</span>
+    <span class="n">blue</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[94m&#39;</span>
+    <span class="n">cyan</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[96m&#39;</span>
+    <span class="n">green</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[92m&#39;</span>
+    <span class="n">yellow</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[93m&#39;</span>
+    <span class="n">red</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[91m&#39;</span>
+    <span class="n">white</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[0m&#39;</span>
+    <span class="n">bold</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[1m&#39;</span></div>
+
+<div class="viewcode-block" id="init_grid"><a class="viewcode-back" href="../../../jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.init_grid">[docs]</a><span class="k">def</span> <span class="nf">init_grid</span><span class="p">(</span><span class="n">taille</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Création d&#39;un plateau vide</span>
+
+<span class="sd">    :param int taille: Taille du plateau</span>
+<span class="sd">    :return: Matrice 2D</span>
+<span class="sd">    :rtype: list[list[int]]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">taille</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">taille</span><span class="p">)]</span></div>
+
+<div class="viewcode-block" id="max_grid"><a class="viewcode-back" href="../../../jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.max_grid">[docs]</a><span class="k">def</span> <span class="nf">max_grid</span><span class="p">(</span><span class="n">grid</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cherche le nombre de digits dans le plus grand nombre du plateau</span>
+
+<span class="sd">    :param list grid: Matrice 2D</span>
+<span class="sd">    :return: Nombre de digits du maximum de la matrice</span>
+<span class="sd">    :rtype: int</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">max_n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">max_n</span><span class="p">:</span>
+            <span class="n">max_n</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">max_n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">digits</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">max_n</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">max_n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">digits</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">digits</span></div>
+
+<div class="viewcode-block" id="taille_str_nombre"><a class="viewcode-back" href="../../../jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.taille_str_nombre">[docs]</a><span class="k">def</span> <span class="nf">taille_str_nombre</span><span class="p">(</span><span class="n">space_number</span><span class="p">,</span><span class="n">i</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Modifie la taille (au sens taille du string) d&#39;un nombre</span>
+<span class="sd">    pour qu&#39;elle convienne à une autre</span>
+
+<span class="sd">    :param int space_number: Taile final du string</span>
+<span class="sd">    :param str i: Nombre à rallonger</span>
+<span class="sd">    :return: Le même nombre qui correspond à la taille donnée</span>
+<span class="sd">    :rtype: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">iprime</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">iprime</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">space_number</span><span class="p">:</span>
+        <span class="n">iprime</span> <span class="o">+=</span> <span class="s2">&quot; &quot;</span>
+        <span class="n">count</span> <span class="o">+=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">count</span> <span class="o">*</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span><span class="n">i</span></div>
+
+<div class="viewcode-block" id="color"><a class="viewcode-back" href="../../../jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.color">[docs]</a><span class="k">def</span> <span class="nf">color</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">space_number</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Définit les couleurs à afficher pour les différents nombres possibles</span>
+<span class="sd">    Puissances de 2 jusqu&#39;à 2048</span>
+
+<span class="sd">    :param int i: Nombre</span>
+<span class="sd">    :param int space_number: Taille du string</span>
+<span class="sd">    :return: String avec les couleurs en fonction de la valeur de i et la taille aqéquates</span>
+<span class="sd">    :rtype: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nombre</span> <span class="o">=</span> <span class="n">taille_str_nombre</span><span class="p">(</span><span class="n">space_number</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">phrase</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">white</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">white</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">phrase</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">green</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">white</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">phrase</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">cyan</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">white</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="n">phrase</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">blue</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">white</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">16</span><span class="p">:</span>
+        <span class="n">phrase</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">yellow</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">white</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">32</span><span class="p">:</span>
+        <span class="n">phrase</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">red</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">white</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">64</span><span class="p">:</span>
+        <span class="n">phrase</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">purple</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">white</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">128</span><span class="p">:</span>
+        <span class="n">phrase</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">green</span><span class="si">}{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">bold</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">white</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">256</span><span class="p">:</span>
+        <span class="n">phrase</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">blue</span><span class="si">}{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">bold</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">white</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">512</span><span class="p">:</span>
+        <span class="n">phrase</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">yellow</span><span class="si">}{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">bold</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">white</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1024</span><span class="p">:</span>
+        <span class="n">phrase</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">red</span><span class="si">}{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">bold</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">white</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2048</span><span class="p">:</span>
+        <span class="n">phrase</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">purple</span><span class="si">}{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">bold</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Couleurs</span><span class="o">.</span><span class="n">white</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">return</span> <span class="n">phrase</span></div>
+
+<div class="viewcode-block" id="show_grid"><a class="viewcode-back" href="../../../jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.show_grid">[docs]</a><span class="k">def</span> <span class="nf">show_grid</span><span class="p">(</span><span class="n">grid</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Affichage du plateau dans le terminal</span>
+
+<span class="sd">    :param list grid: Matrice 2D</span>
+<span class="sd">    :return: Affiachge du plateau dans le terminal</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">space_number</span> <span class="o">=</span> <span class="n">max_grid</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span>
+    <span class="n">paragraphe</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">:</span>
+        <span class="n">phrase</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">i</span><span class="p">:</span>
+            <span class="n">phrase</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">color</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">space_number</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;  &quot;</span>
+        <span class="n">paragraphe</span> <span class="o">+=</span> <span class="n">phrase</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">paragraphe</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="random_grid"><a class="viewcode-back" href="../../../jeu2048.subpackages.html#jeu2048.subpackages.grid_setup.random_grid">[docs]</a><span class="k">def</span> <span class="nf">random_grid</span><span class="p">(</span><span class="n">grid</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Placmement d&#39;un 2 à 80% et d&#39;un 4 à 20% de chance</span>
+
+<span class="sd">    :param list grid: Matrice 2D</span>
+<span class="sd">    :return: Plateau initial avec un 0 changé en 2 (80%) ou 4 (20%)</span>
+<span class="sd">    :rtype: list[list[int]]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">coord</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">indx_i</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">grid</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">indx_j</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">coord</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">indx_i</span><span class="p">,</span><span class="n">indx_j</span><span class="p">])</span>
+    <span class="n">proba</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">proba</span> <span class="o">&lt;=</span> <span class="mf">0.8</span><span class="p">:</span>
+        <span class="n">chiffre</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">chiffre</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">coord_random</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">coord</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">grid</span><span class="p">[</span><span class="n">coord</span><span class="p">[</span><span class="n">coord_random</span><span class="p">][</span><span class="mi">0</span><span class="p">]][</span><span class="n">coord</span><span class="p">[</span><span class="n">coord_random</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">chiffre</span>
+    <span class="k">return</span> <span class="n">grid</span></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">jeu2048 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">jeu2048.subpackages.grid_setup</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2022, Mathis Dubau.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    </div>
+  </body>
+</html>

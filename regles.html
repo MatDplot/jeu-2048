@@ -1,0 +1,129 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Règles &#8212; jeu2048 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=83e35b93" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=c92c1228" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=359c27e9"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script>window.MathJax = {"tex": {"tags": "ams", "useLabelIds": true}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tests" href="test_script.html" />
+    <link rel="prev" title="Installer le package" href="installation.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="test_script.html" title="Tests"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Installer le package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">jeu2048 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Règles</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="regles">
+<h1>Règles<a class="headerlink" href="#regles" title="Permalink to this heading">¶</a></h1>
+<p>Les règles du jeu 2048 sont simples: vous devez former le nombre 2048. Pour cela vous devez bouger les nombres sur le plateau pour les combiner. Les mouvements possibles sont les suivants:</p>
+<div class="math notranslate nohighlight">
+\[\begin{bmatrix} 8 &amp; 4 &amp; 0 &amp; 0 \end{bmatrix} \xleftarrow{q} \begin{bmatrix} 8 &amp; 2 &amp; 2 &amp; 0 \end{bmatrix} \xrightarrow{d} \begin{bmatrix} 0 &amp; 0 &amp; 8 &amp; 4 \end{bmatrix}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} 8 \\ 4 \\ 0 \\ 0 \end{bmatrix} \xleftarrow{z} \begin{bmatrix} 8 \\ 2 \\ 2 \\ 0 \end{bmatrix} \xrightarrow{s} \begin{bmatrix} 0 \\ 0 \\ 8 \\ 4 \end{bmatrix}\end{split}\]</div>
+<p>Ainsi on se déplace avec les commandes z, q, s et d pour faire ‘glisser’ les nombres dans la direction choisie. Il vont s’additionner entre eux s’ils sont égaux.</p>
+<p>Après avoir déplacé le plateau, un 2 (80%) ou un 4 (20%) va apparaitre de manière aléatoire.</p>
+<p>Si vous ne pouvez plus faire de mouvement vous avez perdu.</p>
+<p>Dans cette version vous pouvez choisir la taille du plateau (carré). Plus celui-ci est grand plus c’est facile.</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="installation.html"
+                          title="previous chapter">Installer le package</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="test_script.html"
+                          title="next chapter">Tests</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/regles.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="test_script.html" title="Tests"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Installer le package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">jeu2048 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Règles</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2022, Mathis Dubau.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    </div>
+  </body>
+</html>
